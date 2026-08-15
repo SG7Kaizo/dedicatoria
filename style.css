@@ -441,68 +441,487 @@ body {
    FINAL
 ========================================= */
 
+/* =========================================
+   PROPUESTA
+========================================= */
+
 .final {
     min-height: 100vh;
 
     background:
-        radial-gradient(
-            circle at center,
+        radial-gradient(circle at center,
             #ffeef1,
-            #f6d9df
-        );
+            #f6d9df);
 }
 
 .final-contenido {
     max-width: 650px;
+
+    text-align: center;
 }
+
+
+/* Corazón */
 
 .corazon-final {
     font-size: 70px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     animation:
         latido 1.7s infinite ease-in-out;
 }
 
-.final h2 {
-    font-size: clamp(45px, 9vw, 75px);
+
+/* Texto de la carta */
+
+.mensaje-propuesta {
+
+    font-size: 20px;
+
+    line-height: 1.9;
+
+    color: #704b53;
+
+    margin-top: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Firma Allison */
+
+.firma-propuesta {
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #6f2938;
+
+    margin-bottom: 35px;
+}
+
+
+/* Pregunta */
+
+.pregunta-noviazgo {
+
+    font-size: clamp(40px,
+            8vw,
+            65px);
+
+    line-height: 1.15;
+
+    color: #672c39;
+
+    font-style: italic;
+
+    margin-top: 35px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   BOTÓN SALVAJE ❤️
+========================================= */
+
+.btn-aceptar {
+
+    position: relative;
+
+    border: none;
+
+    padding: 19px 38px;
+
+    border-radius: 50px;
+
+    background: #8e3d50;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(103, 44, 57, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation:
+        botonLatido 2s infinite;
+}
+
+
+/* Brillo */
+
+.btn-aceptar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+
+    transform: translateX(-120%);
+
+    transition:
+        transform 0.6s ease;
+
+}
+
+
+.btn-aceptar:hover::before {
+
+    transform: translateX(120%);
+
+}
+
+
+.btn-aceptar:hover {
+
+    transform:
+        scale(1.08) rotate(-1deg);
+
+    box-shadow:
+        0 18px 40px rgba(103, 44, 57, 0.4);
+
+}
+
+
+.btn-aceptar:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes botonLatido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =========================================
+   TRANSICIÓN
+========================================= */
+
+#transicionAmor {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background:
+        radial-gradient(circle,
+            #672c39,
+            #32151c);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+
+#transicionAmor.activo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.transicion-corazon {
+
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido 1.2s infinite ease-in-out;
+
+}
+
+
+#transicionAmor p {
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================================
+   MENSAJE FINAL
+========================================= */
+
+.final-amor {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at center,
+            #fff1f4,
+            #f6d9df);
+}
+
+
+.final-amor-contenido {
+
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+.corazon-final-amor {
+
+    font-size: 75px;
+
+    margin-bottom: 25px;
+
+    animation:
+        latido 1.7s infinite ease-in-out;
+
+}
+
+
+.final-amor h2 {
+
+    font-size: clamp(48px,
+            9vw,
+            78px);
 
     font-weight: normal;
 
     color: #672c39;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+
 }
 
-.mensaje-final {
-    font-size: 20px;
+
+.texto-oficial {
+
+    font-size: 21px;
 
     line-height: 1.8;
 
     color: #704b53;
 
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+
 }
 
-.fecha {
+
+.fecha-oficial {
+
     font-family: Arial, sans-serif;
 
-    letter-spacing: 5px;
+    letter-spacing: 6px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     color: #a15c69;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+
 }
 
-.firma {
+
+.separador-corazon {
+
+    font-size: 20px;
+
+    color: #8e3d50;
+
+    margin: 25px 0;
+
+}
+
+
+.contador-titulo {
+
+    font-size: 18px;
+
+    color: #704b53;
+
+    font-style: italic;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+.contador {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin: 25px 0 45px;
+
+}
+
+
+.contador-item {
+
+    min-width: 105px;
+
+    padding: 18px 12px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 8px 25px rgba(103,
+            44,
+            57,
+            0.10);
+
+}
+
+
+.contador-item span {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: #672c39;
+
+    font-weight: 500;
+
+}
+
+
+.contador-item small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #a15c69;
+
+}
+
+
+.firma-final {
+
     font-size: 22px;
 
     font-style: italic;
 
     color: #6f2938;
+
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .mensaje-propuesta {
+
+        font-size: 18px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .contador {
+
+        gap: 8px;
+
+    }
+
+
+    .contador-item {
+
+        min-width: 75px;
+
+        padding: 14px 8px;
+
+    }
+
+
+    .contador-item span {
+
+        font-size: 24px;
+
+    }
+
 }
 
 
@@ -580,6 +999,125 @@ body {
 
     .frase-contenido p {
         font-size: 30px;
+    }
+
+}
+
+/* =========================================
+   TRANSICIÓN DESPUÉS DEL VIDEO
+========================================= */
+
+.transicion-video {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+
+.transicion-video.activo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.transicion-video-contenido {
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    transform: translateY(30px);
+
+    opacity: 0;
+
+    transition:
+        transform 1s ease,
+        opacity 1s ease;
+
+}
+
+
+.transicion-video.activo .transicion-video-contenido {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+}
+
+
+.corazon-transicion {
+
+    font-size: 70px;
+
+    margin-bottom: 25px;
+
+    animation:
+        latidoTransicion 1.2s infinite;
+
+}
+
+
+.transicion-video p {
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.transicion-video h2 {
+
+    font-size: 32px;
+
+    line-height: 1.4;
+
+}
+
+
+@keyframes latidoTransicion {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
     }
 
 }
