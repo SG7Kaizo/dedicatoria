@@ -1,0 +1,585 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fff7f8;
+    color: #3d2529;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PANTALLA DE INICIO
+========================================= */
+
+.pantalla-inicio {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffafa 0%,
+            #ffecef 45%,
+            #f8dce2 100%
+        );
+
+    z-index: 1000;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.pantalla-inicio.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* Corazón */
+
+.corazon {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido 1.5s infinite ease-in-out;
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* Textos */
+
+.pequeno {
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #9b646e;
+
+    margin-bottom: 12px;
+}
+
+.pantalla-inicio h1 {
+    font-size: clamp(55px, 12vw, 100px);
+    font-weight: normal;
+
+    color: #6f2938;
+
+    margin-bottom: 5px;
+}
+
+.nombre {
+    font-size: 20px;
+    color: #9b646e;
+
+    margin-bottom: 35px;
+}
+
+
+/* Botón */
+
+#btnAbrir {
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    background: #8e3d50;
+    color: white;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(100, 30, 50, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#btnAbrir:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(100, 30, 50, 0.3);
+}
+
+#btnAbrir span {
+    margin-left: 7px;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido {
+    opacity: 1;
+
+    transition:
+        opacity 1s ease;
+}
+
+.contenido.oculto {
+    opacity: 0;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+    min-height: 100vh;
+
+    padding:
+        80px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.portada {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(255, 244, 247, 0.85),
+            rgba(255, 244, 247, 0.95)
+        );
+
+    position: relative;
+}
+
+.portada-contenido {
+    max-width: 750px;
+}
+
+.etiqueta {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #a15c69;
+
+    margin-bottom: 20px;
+}
+
+.portada h2 {
+    font-size: clamp(38px, 8vw, 72px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    color: #672c39;
+}
+
+.linea {
+    width: 60px;
+    height: 2px;
+
+    background: #b87583;
+
+    margin: 35px auto;
+}
+
+.texto-intro {
+    font-size: 20px;
+
+    color: #88545f;
+}
+
+
+/* =========================================
+   FOTO PRINCIPAL
+========================================= */
+
+.foto-principal {
+    width: min(850px, 100%);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(75, 30, 40, 0.18);
+}
+
+.foto-principal img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 750px;
+
+    object-fit: cover;
+}
+
+.texto-foto {
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    font-size: 22px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DEDICATORIA
+========================================= */
+
+.dedicatoria {
+    background: #fff;
+
+    min-height: auto;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.dedicatoria h2,
+.galeria-seccion h2,
+.video-seccion h2 {
+    font-size: clamp(35px, 7vw, 60px);
+
+    font-weight: normal;
+
+    color: #672c39;
+
+    margin-bottom: 45px;
+}
+
+.texto-dedicatoria {
+    max-width: 700px;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    color: #67474d;
+}
+
+.texto-dedicatoria p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria-seccion {
+    background: #fff7f8;
+
+    min-height: auto;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.galeria {
+    width: min(950px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.foto {
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    aspect-ratio: 1 / 1;
+
+    box-shadow:
+        0 10px 30px rgba(80, 30, 40, 0.12);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   FRASE
+========================================= */
+
+.frase {
+    min-height: 70vh;
+
+    background: #6f2938;
+
+    color: white;
+}
+
+.frase-contenido {
+    max-width: 700px;
+}
+
+.frase-contenido span {
+    font-size: 70px;
+
+    line-height: 0.5;
+
+    opacity: 0.6;
+}
+
+.frase-contenido p {
+    font-size: clamp(30px, 6vw, 50px);
+
+    line-height: 1.4;
+
+    font-style: italic;
+
+    margin: 30px 0;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-seccion {
+    background: #fff;
+
+    min-height: auto;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.video-container {
+    width: min(900px, 100%);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(70, 25, 35, 0.2);
+}
+
+.video-container video {
+    display: block;
+
+    width: 100%;
+
+    max-height: 700px;
+
+    background: #000;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffeef1,
+            #f6d9df
+        );
+}
+
+.final-contenido {
+    max-width: 650px;
+}
+
+.corazon-final {
+    font-size: 70px;
+
+    margin-bottom: 30px;
+
+    animation:
+        latido 1.7s infinite ease-in-out;
+}
+
+.final h2 {
+    font-size: clamp(45px, 9vw, 75px);
+
+    font-weight: normal;
+
+    color: #672c39;
+
+    margin-bottom: 30px;
+}
+
+.mensaje-final {
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #704b53;
+
+    margin-bottom: 40px;
+}
+
+.fecha {
+    font-family: Arial, sans-serif;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    color: #a15c69;
+
+    margin-bottom: 35px;
+}
+
+.firma {
+    font-size: 22px;
+
+    font-style: italic;
+
+    color: #6f2938;
+}
+
+
+/* =========================================
+   CORAZONES FLOTANTES
+========================================= */
+
+.corazon-flotante {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    animation:
+        subir 5s linear forwards;
+
+    z-index: 2000;
+}
+
+@keyframes subir {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(30deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .seccion {
+        padding:
+            70px 18px;
+    }
+
+    .galeria {
+        gap: 8px;
+    }
+
+    .foto {
+        border-radius: 10px;
+    }
+
+    .texto-dedicatoria {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
+
+    .frase {
+        min-height: 80vh;
+    }
+
+    .frase-contenido p {
+        font-size: 30px;
+    }
+
+}
